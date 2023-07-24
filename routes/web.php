@@ -20,6 +20,9 @@ Route::get('/', function () {
 Route::get('/jean', function () {
     return view('jean');
 });
+Route::get('/logout', function () {
+    return view('auth.login');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
