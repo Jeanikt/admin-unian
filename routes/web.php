@@ -17,9 +17,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/jean', function () {
-    return view('jean');
-});
+Route::get('/home', function () {
+    return view('feed.index');
+})->middleware(['auth', 'verified'])->name('home');
+
+
+Route::get('/foryou', function () {
+    return view('feed.foryou');
+})->middleware(['auth', 'verified'])->name('foryou');
+
+
 Route::get('/logout', function () {
     return view('auth.login');
 });
